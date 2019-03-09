@@ -1,8 +1,9 @@
 def gitUrl = "https://github.com/jpastoru/chocolate-factory.git"
+def BRANCH_NAME = "master"
 node {
     stage("checkout git") {
       dir("${WORKSPACE}") {
-          git url: "${gitUrl}", branch: "${env.BRANCH_NAME}"
+          git url: "${gitUrl}", branch: "${BRANCH_NAME}"
           sh "ls -la"
       }
     }
